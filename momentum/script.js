@@ -2,6 +2,8 @@ const time = document.querySelector('.time');
 const focus = document.querySelector('.focus');
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
+const date = document.querySelector('.date');
+
 
 function showTime() {
     let today = new Date(),
@@ -19,6 +21,21 @@ setTimeout(showTime, 1000);
 
 }
 
+function showDate() {
+    let today = new Date(),
+    month = today.getMonth(),
+    day = today.getDate(),
+    weekday  = today.getDay();
+
+    let days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+    let monthName = ["Января", "Февраля", "Марта", "Апреля", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
+
+date.innerHTML = `${days[weekday]}<span>, </span>${day}<span> </span>${monthName[month]}`;
+
+setTimeout(showTime, 1000);
+
+}
+
 function addZero(n) {
     return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
@@ -27,15 +44,19 @@ function setBgGreet() {
     let today = new Date(),
     hour = today.getHours();
 
-    if (hour < 12) {
+    if (hour < 12 && hour > 6) {
         document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
-        greeting.textContent = 'Good Morning';
+        greeting.textContent = 'Доброе утро, ';
     } else if (hour < 18) {
         document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
-        greeting.textContent = 'Good Afternoon';       
+        greeting.textContent = 'Добрый день, ';       
+    } else if (hour < 24) {
+        document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
+        greeting.textContent = 'Добрый вечер, ';   
+        document.body.style.color = 'white';
     } else {
         document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
-        greeting.textContent = 'Good Evening';   
+        greeting.textContent = 'Доброй ночи, ';   
         document.body.style.color = 'white';
     }
 }
@@ -88,6 +109,7 @@ showTime();
 setBgGreet();
 getName();
 getFocus();
+showDate();
 
 //
 
