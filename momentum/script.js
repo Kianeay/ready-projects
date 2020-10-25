@@ -4,7 +4,24 @@ const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
 const date = document.querySelector('.date');
 
+//weather
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
 
+async function getWeather() {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=ru&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json();
+  
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${data.main.temp}°C`;
+    weatherDescription.textContent = data.weather[0].description;
+  }
+
+
+
+  
 function showTime() {
     let today = new Date(),
     hour = today.getHours(),
@@ -62,14 +79,15 @@ function setBgGreet() {
 }
 
 function getName() {
-    if (localStorage.getItem('name') === null) {
-        name.textContent = 'Enter Name';
+    if (localStorage.getItem('name') === null || localStorage.getItem('name') === '' || localStorage.getItem('name') === 'Введите имя' ) {
+        name.textContent = 'Введите имя';
     } else {
         name.textContent = localStorage.getItem('name');
     }
 }
 
 function setName(e) {
+    
     if (e.type === 'keypress') {
       if (e.which == 13 || e.keyCode == 13) {
         localStorage.setItem('name', e.target.innerText);
@@ -81,8 +99,8 @@ function setName(e) {
 }
 
 function getFocus() {
-    if (localStorage.getItem('focus') === null) {
-        focus.textContent = 'Enter Focus';
+    if (localStorage.getItem('focus') === null || localStorage.getItem('focus') === '' || localStorage.getItem('focus') === 'Введите цель' ) {
+        focus.textContent = 'Введите цель';
     } else {
         focus.textContent = localStorage.getItem('focus');
     }
