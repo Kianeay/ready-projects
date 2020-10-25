@@ -9,18 +9,47 @@
   <title>momentum</title>
 </head>
 <body>
-  <time class="time"></time>
-  <h2 class="date"></h2>
-  <h1>
-    <span class="greeting"></span>
-    <span class="name" contenteditable="true"></span>
-  </h1>
-  <h2>What Is Your Focus For Today?</h2>
-  <h2 class="focus" contenteditable="true"></h2>
-
-  <i class="weather-icon owf"></i>
-  <div class="temperature"></div>
-  <div class="weather-description"></div>
+  <div class="weather-container">
+    <i class="weather-icon owf"></i>
+   <div class="temp-info">
+    <div class="temperature"></div>
+    <div class="air"></div>
+    <div class="wind"></div>
+   </div> 
+    <div class="weather-description"></div>
+  
+    <div class="city" contenteditable="true">Минск</div>
+  </div>
+  <div class="wrapper">
+    <div class="center">
+      <div class="left">
+        <time class="time"></time>
+        <h2 class="date"></h2>
+      </div>
+      <div class="right">
+        <h1>
+          <span class="greeting"></span>
+          <span class="name" contenteditable="true"></span>
+        </h1>
+        <h2>Какая ваща цель сегодня?</h2>
+        <h2 class="focus" contenteditable="true"></h2>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+ 
+  <figure class="quote">
+    <blockquote>
+      You were not born a winner, and you were not born a loser. You are what you make yourself be.
+    </blockquote>
+    <figcaption> 
+      Lou Holtz
+    </figcaption>
+  </figure>
+ 
+  
 
   <button class="btn">   </button>
   <script src="script.js"></script>

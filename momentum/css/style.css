@@ -27,6 +27,7 @@ h1 {
 h2 {
   margin-bottom: 0.5rem;
   opacity: 0.8;
+  font-size: 2rem;
 }
 
 .btn {
@@ -38,6 +39,7 @@ h2 {
   background-repeat: no-repeat;
   filter: grayscale(1);
   margin: 10px;
+ 
 }
 .btn:hover {
   filter: grayscale(.8);
@@ -58,4 +60,90 @@ h2 {
 .date {
   font-size: 3rem;
   margin-bottom: 4rem;
+}
+.name {
+  font-style: italic;
+font-weight: lighter;
+}
+.focus {
+  font-style: italic;
+  font-weight: lighter;
+}
+.weather-container {
+ 
+  border-radius: 25px;
+  margin: 3rem;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  
+ 
+}
+.weather-icon {
+  font-size: 50px;
+  margin-top: 25px;
+}
+.weather-description {
+  padding: 0 50px;
+font-size: 18px;
+}
+.city {
+  margin-top: 5px;
+  color: #eb8080;
+margin-bottom: 25px;
+}
+.wind {
+  color: #eb8080;
+}
+.temperature {
+  font-size: 19px;
+font-weight: bold;
+color: #eb8080;
+}
+.temp-info {
+  display: flex;
+justify-content: space-around;
+margin: 9px;
+}
+.center {
+  display: flex;
+flex-wrap: wrap;
+align-content: center;
+align-items: center;
+justify-content: space-between;
+column-gap: 10rem;
+padding: 5rem;
+background-color: #89898930;
+}
+.right {
+  display: flex;
+flex-direction: column;
+align-content: center;
+align-items: center;
+align-self: center;
+margin: auto;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin: auto;
+}
+
+.quote {
+  font: 1.2rem Georgia, serif;
+  margin: 0;
+ 
+  padding: 1em;
+  border-radius: 1em;
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
+}
+.quote figcaption {
+  text-align: right;
 }
